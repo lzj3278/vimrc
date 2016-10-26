@@ -15,6 +15,7 @@ mkdir -p ~/.vim/ftplugin
 
 ####插件管理器安装:
 "cd ~/.vim/bundle
+
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 在vim中 ：PluginInstall 来安装插件
