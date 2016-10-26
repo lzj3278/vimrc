@@ -66,7 +66,7 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
-"inoremap <C-h> <Left>
+"inorllemap <C-h> <Left>
 "inoremap <C-j> <Down>
 "inoremap <C-k> <Up>
 "inoremap <C-l> <Right>
@@ -257,23 +257,38 @@ inoremap <Tab> <C-R>=CleverTab()<CR>
 "自动插入文件头
 "===========================================================================
 " 定义函数AutoSetFileHead，自动插入文件头
-autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
-function! AutoSetFileHead()
-    "如果文件类型为.sh文件
-    if &filetype == 'sh'
-        call setline(1, "\#!/bin/bash")
-    endif
+"auto add pyhton header --start
+autocmd BufNewFile *.py 0r ~/.vim/template/py.clp
+autocmd BufNewFile *.py ks|call FileName()|'s
+autocmd BufNewFile *.py ks|call CreatedTime()|'s
 
-    "如果文件类型为python
-    if &filetype == 'python'
-        call setline(1, "\#!/usr/bin/env python")
-        call append(1, "\# encoding: utf-8")
+fun FileName()
+    if line("$") > 10
+        let l = 10  "这里是字母L 不是数字1
+    else
+        let l = line("$")
     endif
-    normal G
-    normal o
-    normal o
-endfunc
+    exe "1," . l . "g/File Name:.*/s/File Name:.*/File Name: " .expand("%")
+    "最前面是数字1，这里的File Name:要和模板中一致
+endfun
 
+fun CreatedTime()
+    if line("$") > 10
+        let l = 10
+    else
+        let l = line("$")
+    endif
+    exe "1," . l . "g/Created Time:.*/s/Created Time:.*/Created Time: ".strftime("%Y-%m-%d %T")
+    "这里Create Time:要和模板中一致
+endfun
+"auto add python header --end
+"
+"auto add bash header --start
+
+autocmd BufNewFile *.sh 0r ~/.vim/template/sh
+autocmd BufNewFile *.sh ks|call CreatedTime()|'s
+
+"auto add bash header --end
 
 "============================================================================
 "                          插件管理器
@@ -348,10 +363,9 @@ Plugin 'klen/python-mode'
 " and uncomment the part about jedi-vim instead
 " cd ~/.vim/bundle
 " git clone https://github.com/klen/python-mode
-" Go to definition (<C-c>g for :RopeGotoDefinition)   xt 
-" leader + d : 跳转到函数定义 
-" ctrl + p 补全开启
+" leader + r run python code 
 map <Leader>g :call RopeGotoDefinition()<CR>
+map <F5> <leader>r <CR>
 let ropevim_enable_shortcuts = 1
 "let g:pymode_rope_goto_def_newwin = "vnew"
 "let g:pymode_rope_extended_complete = 1
@@ -366,7 +380,6 @@ let g:pymode_syntax_builtin_funcs = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
-
 "****************************************************************************
 
 
@@ -375,13 +388,12 @@ Plugin 'davidhalter/jedi-vim'
 " Settings for jedi-vim
 " cd ~/.vim/bundle
 " git clone git://github.com/davidhalter/jedi-vim.git
-" leader + r run python code 
-" <Ctrl-c>d     Rope show documentation
+" leader + d : 跳转到函数定义 
 "  [[    Jump on previous class or function (normal, visual, operator modes)
 "  ]]    Jump on next class or function (normal, visual, operator  modes)
 "
 let g:jedi#usages_command = "<leader>z"
-let g:jedi#rename_command ="leader>x" 
+let g:jedi#rename_command ="<leader>x" 
 let g:jedi#popup_on_dot = 1
 let g:jedi#completions_command = "<C-Alt>"
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
