@@ -5,9 +5,13 @@
 ##一 安装步骤：
 ####创建文件夹：
 cd ~
+
 mkdir .vim
+
 mkdir -p ~/.vim/bundle
+
 mkdir -p ~/.vim/ftplugin 
+
 
 ####插件管理器安装:
 cd ~/.vim/bundle
