@@ -39,9 +39,9 @@ F8 自动pep8 格式化
 ###插件列表：
 ####kien/ctrlp.vim ：
 
-，+ f 打开最近打开的文件
+\<leader>f 打开最近打开的文件
 
-，+ p 文件所在文件夹列表文件
+\<leader>p 文件所在文件夹列表文件
 
 ctrl + v 竖排打开文件
 
@@ -50,9 +50,29 @@ ctrl + x  上下打开文件
 ctrl + t tab中打开文件
 
 #### tacahiroy/ctrlp-funky
-  <leader>fu 进入当前文件的函数列表搜索                                         
-  <leader>fU 搜索当前光标下单词对应的函数
+  \<leader>fu 进入当前文件的函数列表搜索                                         
+  \<leader>fU 搜索当前光标下单词对应的函数
 
+#### klen/python-mode
+
+\<leader>r 一键执行
+
+#### davidhalter/jedi-vim
+
+\<leader>d : 跳转到函数定义
+
+#### tpope/vim-surround
+
+"替换: cs"'                                                                     
+ ""Hello world!" -> 'Hello world!'                                               
+ "替换-标签(t=tag): cst"                                                                                                                                                     
+"<a>abc</a>  -> "abc"                                                           
+"删除: ds"                                                                      
+"Hello world!" -> Hello world!                                                  
+"添加(ys=you surround): ysiw"                                                   
+ "Hello -> "Hello"                                                               
+"添加-整行: yss"                                                                
+ "Hello world -> "Hello world" 
 
 
 
