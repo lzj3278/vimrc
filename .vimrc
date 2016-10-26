@@ -66,7 +66,7 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
-"inorllemap <C-h> <Left>
+"inoremap <C-h> <Left>
 "inoremap <C-j> <Down>
 "inoremap <C-k> <Up>
 "inoremap <C-l> <Right>
