@@ -29,6 +29,12 @@ mkdir -p ~/.vim/ftplugin
  " mkdir -p ~/.vim/ftplugin                                                      
  " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
  
+####文件头的添加
+
+“mkdir -p ~/.vim/template/
+
+复制template中 py.clp  sh 到~/.vim/template/
+ 
 ## 二 快捷键：
 ####上方的f按键：
 F2 打开文件树
