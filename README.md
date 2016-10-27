@@ -12,6 +12,13 @@ mkdir -p ~/.vim/bundle
 
 mkdir -p ~/.vim/ftplugin 
 
+####安装python包：
+
+pip install autopep8 
+
+pip install jedi
+
+
 
 ####插件管理器安装:
 "cd ~/.vim/bundle
