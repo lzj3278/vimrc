@@ -4,6 +4,7 @@
 ##################
 
 install_vim = true
+CURRENT_DIR=`pwd`
 
 
 echo "step1: backing up current vim config"
@@ -21,25 +22,28 @@ mkdir -p ~/.vim/ftplugin
 mkdir -p ~/.vim/colors
 mkdir -p ~/.vim/template/
 
-yum install git python -y
+yum install python -y 
+yum install cmake -y 
+yum install -y gcc gcc-c++
 
-pip install autopep8
-pip install jedi
+
+pip install autopep8  jedi > /dev/null 2>&1
+
+cp template/* ~/.vim/template/
+cp .vimrc ~/
 
 cd ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git
 cd ~/.vim/colors
 wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
-cp template/* ~/.vim/template/
-cp .vimrc ~/
 
 echo "Step3: update/install plugins using Vundle"
 
 system_shell=$SHELL
 export SHELL="/bin/sh"
 
-vim -u ~/.vimrc +PlugInstall! +PlugClean! +qall
+vim -u ~/.vimrc +PluginInstall! +qall
 
 export SHELL=$system_shell
 
