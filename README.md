@@ -2,7 +2,11 @@
 
 自己的vimrc配置文件 （针对python向）
 
-##一 安装步骤：
+## 一键安装脚本安装 
+chmod 755 install.sh  
+./install.sh
+
+##二 手动安装步骤：
 ####创建文件夹：
 cd ~
 
