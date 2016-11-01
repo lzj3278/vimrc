@@ -8,8 +8,7 @@ CURRENT_DIR=`pwd`
 
 
 echo "step1: backing up current vim config"
-today = `date +%Y%m%d`
-
+today=`date +%Y%m%d`
 if $install_vim; then
     for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.bundles; do [ -e $i ] && [ ! -L $i ] && mv $i $i.$today; done
     for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.bundles; do [ -L $i ] && unlink $i ; done
