@@ -12,18 +12,14 @@ chmod 755 install.sh
 ####创建文件夹：
 ```
 cd ~
-
 mkdir .vim
-
 mkdir -p ~/.vim/bundle
-
 mkdir -p ~/.vim/ftplugin 
 ```
 
 ####安装python包：
 ```
 pip install autopep8 
-
 pip install jedi
 ```
 
@@ -31,7 +27,6 @@ pip install jedi
 ####插件管理器安装:
 ```
 cd ~/.vim/bundle
-
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 在vim中 ：PluginInstall 来安装插件
@@ -67,7 +62,7 @@ F8 自动pep8 格式化
 
 ####插件列表：
 ####kien/ctrlp.vim ：
-
+```
 \<leader>f 打开最近打开的文件
 
 \<leader>p 文件所在文件夹列表文件
@@ -77,19 +72,20 @@ ctrl + v 竖排打开文件
 ctrl + x  上下打开文件
 
 ctrl + t tab中打开文件
-
+```
 #### tacahiroy/ctrlp-funky
+```
   \<leader>fu 进入当前文件的函数列表搜索                                         
   \<leader>fU 搜索当前光标下单词对应的函数
-
+```
 #### klen/python-mode
-
+```
 \<leader>r 一键执行
-
+```
 #### Valloric/YouCompleteMe
-
+```
 \<leader>d : 跳转到函数定义
-
+```
 #### tpope/vim-surround
 ```
 "替换: cs"'                                                                     
