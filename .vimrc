@@ -287,6 +287,7 @@ endfun
 "auto add bash header --start
 
 autocmd BufNewFile *.sh 0r ~/.vim/template/sh
+autocmd BufNewFile *.sh ks|call FileName()|'s
 autocmd BufNewFile *.sh ks|call CreatedTime()|'s
 
 "auto add bash header --end
