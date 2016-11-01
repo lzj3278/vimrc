@@ -3,11 +3,14 @@
 自己的vimrc配置文件 （针对python向）
 
 ## 一键安装脚本安装 
+```
 chmod 755 install.sh  
 ./install.sh
+```
 
 ##二 手动安装步骤：
 ####创建文件夹：
+```
 cd ~
 
 mkdir .vim
@@ -15,39 +18,42 @@ mkdir .vim
 mkdir -p ~/.vim/bundle
 
 mkdir -p ~/.vim/ftplugin 
+```
 
 ####安装python包：
-
+```
 pip install autopep8 
 
 pip install jedi
-
+```
 
 
 ####插件管理器安装:
-"cd ~/.vim/bundle
+```
+cd ~/.vim/bundle
 
-"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 在vim中 ：PluginInstall 来安装插件
 
-####主题插件安装                                                                                                                                                                 
-   " mkdir -p ~/.vim/colors && cd ~/.vim/colors                                    
-   " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-
+####主题插件安装                                                                                                                               ```                                  
+   mkdir -p ~/.vim/colors && cd ~/.vim/colors                                    
+   wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+```
 
 ####python 折叠
- " mkdir -p ~/.vim/ftplugin                                                      
- " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
- 
+```
+  mkdir -p ~/.vim/ftplugin                                                      
+  wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
+ ```
 ####文件头的添加
 
 “mkdir -p ~/.vim/template/
 
 复制template中 py.clp  sh 到~/.vim/template/
  
-## 二 快捷键：
-####上方的f按键：
+## 三 用法说明（快捷键）：
+####上方的F按键：
 F2 打开文件树
 
 F3 开启格式化粘贴
@@ -81,12 +87,12 @@ ctrl + t tab中打开文件
 
 \<leader>r 一键执行
 
-#### davidhalter/jedi-vim
+#### Valloric/YouCompleteMe
 
 \<leader>d : 跳转到函数定义
 
 #### tpope/vim-surround
-
+```
 "替换: cs"'                                                                     
  ""Hello world!" -> 'Hello world!'                                               
  "替换-标签(t=tag): cst"                                                                                                                                                     
@@ -97,7 +103,7 @@ ctrl + t tab中打开文件
  "Hello -> "Hello"                                                               
 "添加-整行: yss"                                                                
  "Hello world -> "Hello world" 
-
+```
 
 
 
