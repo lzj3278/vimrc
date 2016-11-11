@@ -101,8 +101,8 @@ ctrl + t tab中打开文件
 ```
 
 #### mattn/emmet-vim
-
+```
 插入 html:5 ====》ctrl+y+,生产html文件
-
-[教程：https://www.zfanw.com/blog/zencoding-vim-tutorial-chinese.html]
+```
+教程：https://www.zfanw.com/blog/zencoding-vim-tutorial-chinese.html
 
