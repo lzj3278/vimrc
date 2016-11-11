@@ -100,7 +100,9 @@ ctrl + t tab中打开文件
  "Hello world -> "Hello world" 
 ```
 
+#### mattn/emmet-vim
 
+插入 html:5 ====》ctrl+y+,生产html文件
 
-
+[教程：https://www.zfanw.com/blog/zencoding-vim-tutorial-chinese.html]
 
