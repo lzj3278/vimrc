@@ -543,6 +543,11 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'mattn/emmet-vim'                                                                                                                                           
+" 插入 html:5 ====》ctrl+y+,生产html文件                                           
+let g:user_emmet_install_global = 0                                                
+autocmd FileType html,css EmmetInstall                                             
+"教程：https://www.zfanw.com/blog/zencoding-vim-tutorial-chinese.html
 
 
 "****************************************************************************
