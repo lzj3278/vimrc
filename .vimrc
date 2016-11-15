@@ -170,7 +170,7 @@ inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 "set t_ti= t_te=
 
 " Map ; to : and save a million keystrokes 用于快速进入命令行
-nnoremap ; :
+" nnoremap ; :
 
 "============================================================================
 "开启相对行号，插入模式是绝对行号，普通模式是相对行号
