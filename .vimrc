@@ -49,7 +49,8 @@ noremap  <Leader>w :w<CR>
 
 
 " Quick quit command
- noremap <Leader>q :quit<CR>  " Quit current window
+noremap <Leader>q :quit<CR>
+" Quit current window
 "" noremap <Leader>E :qa!<CR>   " Quit all windows
 
 
@@ -136,7 +137,7 @@ nmap Q gqap
 
 
 " Useful settings
-set history=700
+set history=1000
 set undolevels=700
 
 
@@ -258,11 +259,6 @@ inoremap <Tab> <C-R>=CleverTab()<CR>
 "自动插入文件头
 "===========================================================================
 " 定义函数AutoSetFileHead，自动插入文件头
-"auto add pyhton header --start
-autocmd BufNewFile *.py 0r ~/.vim/template/py.clp
-autocmd BufNewFile *.py ks|call FileName()|'s
-autocmd BufNewFile *.py ks|call CreatedTime()|'s
-
 fun FileName()
     if line("$") > 10
         let l = 10  "这里是字母L 不是数字1
@@ -282,14 +278,17 @@ fun CreatedTime()
     exe "1," . l . "g/Created Time:.*/s/Created Time:.*/Created Time: ".strftime("%Y-%m-%d %T")
     "这里Create Time:要和模板中一致
 endfun
+
+"auto add pyhton header --start
+autocmd BufNewFile *.py 0r ~/.vim/template/py.clp
+autocmd BufNewFile *.py ks|call FileName()|'s
+autocmd BufNewFile *.py ks|call CreatedTime()|'s
 "auto add python header --end
 "
 "auto add bash header --start
-
 autocmd BufNewFile *.sh 0r ~/.vim/template/sh
 autocmd BufNewFile *.sh ks|call FileName()|'s
 autocmd BufNewFile *.sh ks|call CreatedTime()|'s
-
 "auto add bash header --end
 
 "============================================================================
@@ -384,61 +383,61 @@ map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 "****************************************************************************
 
-Plugin 'Valloric/YouCompleteMe'
-
-set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif	"离开插入模式后自动关闭预览窗口
-"上下左右键的行为 会显示其他信息
-inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-" 跳转到定义处
-nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <F7> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
-" nnoremap <leader>lo :lopen<CR>	"open locationlist
-" nnoremap <leader>lc :lclose<CR>	"close locationlist
-inoremap <leader><leader> <C-x><C-o>
-
-let g:ycm_global_ycm_extra_conf = '/root/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-" 不显示开启vim时检查ycm_extra_conf文件的信息  
-let g:ycm_confirm_extra_conf=0
-" 开启基于tag的补全，可以在这之后添加需要的标签路径  
-let g:ycm_collect_identifiers_from_tags_files=1
-"注释和字符串中的文字也会被收入补全
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
-" 输入第2个字符开始补全
-let g:ycm_min_num_of_chars_for_completion=2
-" 禁止缓存匹配项,每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
-" 开启语义补全
-let g:ycm_seed_identifiers_with_syntax=1	
-"在注释输入中也能补全
-let g:ycm_complete_in_comments = 1
-"在字符串输入中也能补全
-let g:ycm_complete_in_strings = 1
-" 设置在下面几种格式的文件上屏蔽ycm
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'nerdtree' : 1,
-      \}
-"youcompleteme  默认tab  s-tab 和 ultisnips 冲突
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-" 修改对C函数的补全快捷键，默认是CTRL + space，修改为ALT + ;
-let g:ycm_key_invoke_completion = '<M-;>'
-
-" SirVer/ultisnips 代码片断
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsListSnippets="<c-e>"
-"定义存放代码片段的文件夹，使用自定义和默认的，将会的到全局，有冲突的会提示
-let g:UltiSnipsSnippetDirectories=["bundle/vim-snippets/UltiSnips"]
-
+"Plugin 'Valloric/YouCompleteMe'
+"
+"set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif	"离开插入模式后自动关闭预览窗口
+""上下左右键的行为 会显示其他信息
+"inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+"inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+"inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+"inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+"" 跳转到定义处
+"nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap <F7> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
+"" nnoremap <leader>lo :lopen<CR>	"open locationlist
+"" nnoremap <leader>lc :lclose<CR>	"close locationlist
+"inoremap <leader><leader> <C-x><C-o>
+"
+"let g:ycm_global_ycm_extra_conf = '/root/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
+"" 不显示开启vim时检查ycm_extra_conf文件的信息  
+"let g:ycm_confirm_extra_conf=0
+"" 开启基于tag的补全，可以在这之后添加需要的标签路径  
+"let g:ycm_collect_identifiers_from_tags_files=1
+""注释和字符串中的文字也会被收入补全
+"let g:ycm_collect_identifiers_from_comments_and_strings = 0
+"" 输入第2个字符开始补全
+"let g:ycm_min_num_of_chars_for_completion=2
+"" 禁止缓存匹配项,每次都重新生成匹配项
+"let g:ycm_cache_omnifunc=0
+"" 开启语义补全
+"let g:ycm_seed_identifiers_with_syntax=1	
+""在注释输入中也能补全
+"let g:ycm_complete_in_comments = 1
+""在字符串输入中也能补全
+"let g:ycm_complete_in_strings = 1
+"" 设置在下面几种格式的文件上屏蔽ycm
+"let g:ycm_filetype_blacklist = {
+"      \ 'tagbar' : 1,
+"      \ 'nerdtree' : 1,
+"      \}
+""youcompleteme  默认tab  s-tab 和 ultisnips 冲突
+"let g:ycm_key_list_select_completion = ['<Down>']
+"let g:ycm_key_list_previous_completion = ['<Up>']
+"" 修改对C函数的补全快捷键，默认是CTRL + space，修改为ALT + ;
+"let g:ycm_key_invoke_completion = '<M-;>'
+"
+"" SirVer/ultisnips 代码片断
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:UltiSnipsListSnippets="<c-e>"
+""定义存放代码片段的文件夹，使用自定义和默认的，将会的到全局，有冲突的会提示
+"let g:UltiSnipsSnippetDirectories=["bundle/vim-snippets/UltiSnips"]
+"
 "****************************************************************************
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 " Settings for jedi-vim
 " cd ~/.vim/bundle
 " git clone git://github.com/davidhalter/jedi-vim.git
@@ -446,29 +445,29 @@ let g:UltiSnipsSnippetDirectories=["bundle/vim-snippets/UltiSnips"]
 "  [[    Jump on previous class or function (normal, visual, operator modes)
 "  ]]    Jump on next class or function (normal, visual, operator  modes)
 "
-"let g:jedi#usages_command = "<leader>z"
-"let g:jedi#rename_command ="<leader>x" 
-"let g:jedi#popup_on_dot = 1
-"let g:jedi#completions_command = "<C-Alt>"
-"map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#rename_command ="<leader>x" 
+let g:jedi#popup_on_dot = 1
+let g:jedi#completions_command = "<C-Alt>"
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
  "See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-"set completeopt=longest,menuone
-"set wildmenu
-"function! OmniPopup(action)
-    "if pumvisible()
-        "if a:action == 'j'
-            "return "\<C-N>"
-        "elseif a:action == 'k'
-            "return "\<C-P>"
-        "endif
-    "endif
-    "return a:action
-"endfunction
+set completeopt=longest,menuone
+set wildmenu
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
 
-"inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-"inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 
 
@@ -548,7 +547,10 @@ Plugin 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0                                                
 autocmd FileType html,css EmmetInstall                                             
 "教程：https://www.zfanw.com/blog/zencoding-vim-tutorial-chinese.html
+"****************************************************************************
+Plugin 'jiangmiao/auto-pairs'
 
+" Insert or delete brackets, parens, quotes in pair.
 
 "****************************************************************************
 " Python folding
