@@ -3,6 +3,7 @@
 ##Created Time: 2016-11-01 14:38:41
 ##################
 
+
 install_vim = true
 CURRENT_DIR=`pwd`
 
@@ -46,13 +47,13 @@ vim -u ~/.vimrc +PluginInstall! +qall
 
 export SHELL=$system_shell
 
-echo "Step4: compile YouCompleteMe"
-echo "It will take a long time, just be patient!"
-echo "If error,you need to compile it yourself"
-echo "cd ~/.vim/bundle/YouCompleteMe/ && python install.py "
-cd ~/.vim/bundle/YouCompleteMe/
-git submodule update --init --recursive
+#echo "Step4: compile YouCompleteMe"
+#echo "It will take a long time, just be patient!"
+#echo "If error,you need to compile it yourself"
+#echo "cd ~/.vim/bundle/YouCompleteMe/ && python install.py "
+#cd ~/.vim/bundle/YouCompleteMe/
+#git submodule update --init --recursive
 
-python install.py
+#python install.py
 
 echo "Install Done"
