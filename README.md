@@ -106,3 +106,16 @@ ctrl + t tab中打开文件
 ```
 教程：https://www.zfanw.com/blog/zencoding-vim-tutorial-chinese.html
 
+#### NERD Tree
+
+'''
+通过hjkl来移动光标
+o打开关闭文件或目录，如果想打开文件，必须光标移动到文件名
+t在标签页中打开
+s和i可以水平或纵向分割窗口打开文件
+p到上层目录
+P到根目录
+K到同目录第一个节点
+P到同目录最后一个节点 
+'''
+
