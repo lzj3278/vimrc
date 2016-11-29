@@ -22,9 +22,9 @@ mkdir -p ~/.vim/ftplugin
 mkdir -p ~/.vim/colors
 mkdir -p ~/.vim/template/
 
-yum install python -y 
-yum install cmake -y 
-yum install -y gcc gcc-c++
+#yum install python -y 
+#yum install cmake -y 
+#yum install -y gcc gcc-c++
 
 
 pip install autopep8  jedi > /dev/null 2>&1
