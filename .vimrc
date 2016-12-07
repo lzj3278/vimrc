@@ -68,10 +68,10 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
-"inorllemap <C-h> <Left>
+"inoremap <C-h> <Left>
 "inoremap <C-j> <Down>
 "inoremap <C-k> <Up>
-"inoremap <C-l> <Right>
+inoremap <C-l> <Right>
 
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
@@ -259,7 +259,21 @@ inoremap <Tab> <C-R>=CleverTab()<CR>
 "自动插入文件头
 "===========================================================================
 " 定义函数AutoSetFileHead，自动插入文件头
-fun FileName()
+""auto add pyhton header --start
+autocmd BufNewFile *.py 0r ~/.vim/template/py.clp
+autocmd BufNewFile *.py ks|call FileName1()|'s
+autocmd BufNewFile *.py ks|call CreatedTime1()|'s
+autocmd BufWrite *.py ks|call LastModified()|'s
+"auto add python header --end
+"
+"auto add bash header --start
+autocmd BufNewFile *.sh 0r ~/.vim/template/sh
+autocmd BufNewFile *.sh ks|call FileName1()|'s
+autocmd BufNewFile *.sh ks|call CreatedTime1()|'s
+autocmd BufWrite *.sh ks|call LastModified()|'s 
+"auto add bash header --end
+
+fun! FileName1()
     if line("$") > 10
         let l = 10  "这里是字母L 不是数字1
     else
@@ -269,7 +283,7 @@ fun FileName()
     "最前面是数字1，这里的File Name:要和模板中一致
 endfun
 
-fun CreatedTime()
+fun! CreatedTime1()
     if line("$") > 10
         let l = 10
     else
@@ -279,17 +293,15 @@ fun CreatedTime()
     "这里Create Time:要和模板中一致
 endfun
 
-"auto add pyhton header --start
-autocmd BufNewFile *.py 0r ~/.vim/template/py.clp
-autocmd BufNewFile *.py ks|call FileName()|'s
-autocmd BufNewFile *.py ks|call CreatedTime()|'s
-"auto add python header --end
-"
-"auto add bash header --start
-autocmd BufNewFile *.sh 0r ~/.vim/template/sh
-autocmd BufNewFile *.sh ks|call FileName()|'s
-autocmd BufNewFile *.sh ks|call CreatedTime()|'s
-"auto add bash header --end
+fun! LastModified()
+    if line("$") > 10
+        let l = 10
+    else
+        let l = line("$")
+    endif
+    exe "1," . l . "g/Last Modified:.*/s/Last Modified:.*/Last Modified: ".strftime("%Y-%m-%d %T")
+
+endfun
 
 "============================================================================
 "                          插件管理器
