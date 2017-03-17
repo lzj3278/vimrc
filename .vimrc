@@ -515,7 +515,7 @@ let g:autopep8_disable_show_diff=1
 Plugin 'Yggdroot/indentLine'
 "github https://github.com/Yggdroot/indentLine.git
 "缩进指示线"
-let g:indentLine_char='┆'
+"let g:indentLine_char='┆'
 let g:indentLine_enabled = 1
 let g:indentLine_color_term = 239
 
