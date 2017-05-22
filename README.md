@@ -1,4 +1,5 @@
 ### 一键安装脚本安装 
+适合centos版本
 ```
 chmod 755 install.sh  
 ./install.sh
