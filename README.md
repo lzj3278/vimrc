@@ -1,12 +1,12 @@
 ### 一键安装脚本安装 
-适合centos版本
+ 适合centos版本
 ```
 chmod 755 install.sh  
 ./install.sh
 ```
 
 ### 二 手动详解安装步骤：
-####创建文件夹：
+#### 创建文件夹：
 ```
 cd ~
 mkdir .vim
