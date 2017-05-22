@@ -1,10 +1,10 @@
-###一键安装脚本安装 
+### 一键安装脚本安装 
 ```
 chmod 755 install.sh  
 ./install.sh
 ```
 
-###二 手动详解安装步骤：
+### 二 手动详解安装步骤：
 ####创建文件夹：
 ```
 cd ~
@@ -13,31 +13,31 @@ mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/ftplugin 
 ```
 
-####安装python包：
+#### 安装python包：
 ```
 pip install autopep8 
 pip install jedi
 ```
 
 
-####插件管理器安装:
+#### 插件管理器安装:
 ```
 cd ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 在vim中 ：PluginInstall 来安装插件
 
-####主题插件安装 
+#### 主题插件安装 
 ```
 mkdir -p ~/.vim/colors && cd ~/.vim/colors                                    
 wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400 
 ```
-####python 折叠
+#### python 折叠
 ```
   mkdir -p ~/.vim/ftplugin                                                      
   wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
   ```
-####文件头的添加
+#### 文件头的添加
 ```
 mkdir -p ~/.vim/template/  
 cp template/* ~/.vim/template/  
