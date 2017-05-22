@@ -507,17 +507,18 @@ Plugin 'tell-k/vim-autopep8'
 " F8 :Autopep8
 " 需要安装 autopep8
 " pip install --upgrade autopep8
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 let g:autopep8_disable_show_diff=1
 
 
 
 "****************************************************************************
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 "github https://github.com/Yggdroot/indentLine.git
 "缩进指示线"
 "let g:indentLine_char='┆'
-let g:indentLine_enabled = 1
-let g:indentLine_color_term = 239
+"let g:indentLine_enabled = 1
+"let g:indentLine_color_term = 239
 
 
 
