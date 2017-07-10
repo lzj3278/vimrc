@@ -71,6 +71,7 @@ ctrl + t tab中打开文件
 
 #### Valloric/YouCompleteMe
 ><leader>d : 跳转到函数定义
+
 ctrl + O :返回跳转前位置
 
 #### tpope/vim-surround
