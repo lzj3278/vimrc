@@ -67,12 +67,12 @@ ctrl + t tab中打开文件
   <leader>fU 搜索当前光标下单词对应的函数
 
 #### klen/python-mode
-><leader>r 一键执行
+>\<leader>r 一键执行
 
 #### davidhalter/jedi-vim
-><leader>d : 跳转到函数定义  
- <C-O> :返回跳转前位置  
- <C-T>：沿着经过的标签列表向回跳转
+>\<leader>d : 跳转到函数定义
+ \<C-O> :返回跳转前位置  
+ \<C-T>：沿着经过的标签列表向回跳转
 
 #### tpope/vim-surround
 >"替换: cs"'                                                                     
