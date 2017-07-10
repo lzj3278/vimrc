@@ -70,8 +70,7 @@ ctrl + t tab中打开文件
 ><leader>r 一键执行
 
 #### Valloric/YouCompleteMe
-><leader>d : 跳转到函数定义
-
+><leader>d : 跳转到函数定义  
 ctrl + O :返回跳转前位置
 
 #### tpope/vim-surround
