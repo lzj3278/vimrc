@@ -56,23 +56,23 @@ F8 自动pep8 格式化
 #### kien/ctrlp.vim ：
 
 >我的leader键映射的是","
-按<leader>f  **(，f)** 打开最近打开的文件，非常好用
-按<leader>p **(，p)** 文件所在文件夹列表文件
+按\<leader>f  **(，f)** 打开最近打开的文件，非常好用
+按\<leader>p **(，p)** 文件所在文件夹列表文件
 ctrl + v 竖排打开文件
 ctrl + x  上下打开文件
 ctrl + t tab中打开文件
 
 #### tacahiroy/ctrlp-funky
-  ><leader>fu 进入当前文件的函数列表搜索                                         
-  <leader>fU 搜索当前光标下单词对应的函数
+  >\<leader>fu 进入当前文件的函数列表搜索                                         
+  \<leader>fU 搜索当前光标下单词对应的函数
 
 #### klen/python-mode
 >\<leader>r 一键执行
 
 #### davidhalter/jedi-vim
->\<leader>d : 跳转到函数定义
- \<C-O> :返回跳转前位置  
- \<C-T>：沿着经过的标签列表向回跳转
+>\<leader>d : 跳转到函数定义  
+ \<C-O> :返回跳转前位置    
+ \<C-T>：沿着经过的标签列表向回跳转  
 
 #### tpope/vim-surround
 >"替换: cs"'                                                                     
