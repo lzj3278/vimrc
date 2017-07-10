@@ -71,8 +71,8 @@ ctrl + t tab中打开文件
 
 #### davidhalter/jedi-vim
 ><leader>d : 跳转到函数定义  
-<C-O> :返回跳转前位置  
-<C-T>：沿着经过的标签列表向回跳转
+ <C-O> :返回跳转前位置  
+ <C-T>：沿着经过的标签列表向回跳转
 
 #### tpope/vim-surround
 >"替换: cs"'                                                                     
