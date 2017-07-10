@@ -69,9 +69,10 @@ ctrl + t tab中打开文件
 #### klen/python-mode
 ><leader>r 一键执行
 
-#### Valloric/YouCompleteMe
+#### davidhalter/jedi-vim
 ><leader>d : 跳转到函数定义  
-ctrl + O :返回跳转前位置
+<C-O> :返回跳转前位置  
+<C-T>：沿着经过的标签列表向回跳转
 
 #### tpope/vim-surround
 >"替换: cs"'                                                                     
